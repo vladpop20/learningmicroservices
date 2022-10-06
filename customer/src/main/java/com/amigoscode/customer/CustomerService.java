@@ -58,20 +58,17 @@ import com.amigoscode.clients.fraud.FraudClient;
 import com.amigoscode.clients.notification.NotificationClient;
 import com.amigoscode.clients.notification.NotificationRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 //@AllArgsConstructor
 public class CustomerService {
 
 	private final CustomerRepository customerRepository;
-	private final RestTemplate restTemplate;
 	private final NotificationClient notificationClient;
 	private final FraudClient fraudClient;
 
-	public CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate, NotificationClient notificationClient, FraudClient fraudClient) {
+	public CustomerService(CustomerRepository customerRepository, NotificationClient notificationClient, FraudClient fraudClient) {
 		this.customerRepository = customerRepository;
-		this.restTemplate = restTemplate;
 		this.notificationClient = notificationClient;
 		this.fraudClient = fraudClient;
 	}
