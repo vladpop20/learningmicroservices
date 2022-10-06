@@ -13,4 +13,5 @@ public class CustomerConfiguration {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
 }
