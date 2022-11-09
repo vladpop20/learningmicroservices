@@ -15,10 +15,10 @@ public class CustomerService {
 	private final FraudClient fraudClient;
 	private final RabbitMQMessageProducer rabbitMQMessageProducer;
 
-	public CustomerService(CustomerRepository customerRepository, NotificationClient notificationClient,
+	public CustomerService(CustomerRepository customerRepository,
 			FraudClient fraudClient, RabbitMQMessageProducer rabbitMQMessageProducer) {
 		this.customerRepository = customerRepository;
-		this.notificationClient = notificationClient;
+
 		this.fraudClient = fraudClient;
 		this.rabbitMQMessageProducer = rabbitMQMessageProducer;
 	}
