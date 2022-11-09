@@ -1,4 +1,4 @@
-# learningmicroservices
+# Microservices and Distributed Systems
 
 Learning how to build Microservices from using: 
  - Spring Boot Microservices
