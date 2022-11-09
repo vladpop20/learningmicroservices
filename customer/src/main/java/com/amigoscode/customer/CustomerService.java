@@ -41,15 +41,14 @@ public class CustomerService {
 			throw new IllegalStateException("fraudster");
 		}
 
-		// todo: send notification
-		// todo: make it async. i.e add to queue
 		NotificationRequest notificationRequest = new NotificationRequest(
 				customer.getId(),
 				customer.getEmail(),
 				String.format("Hi %s, welcome to the world of Java microservices...",
 						customer.getFirstName()));
 
-//		notificationClient.sendNotification(notificationRequest);
+
+//		sent a notification message to Rabbit message queue
 		rabbitMQMessageProducer.publish(
 				notificationRequest,
 				"internal.exchange",
