@@ -94,6 +94,7 @@
                     <version>3.1.4</version>
                     <configuration>
                         <from>
+<!--                            the base image of java 17 sdk that we want for our applications-->
                             <image>eclipse-temurin:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc</image>
                             <platforms>
                                 <platform>

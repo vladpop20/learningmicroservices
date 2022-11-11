@@ -1,6 +1,7 @@
 
-// need to be within the working directory, in order to compose the docker file
+// need to be within the working directory, in order to compose the docker file, and start the services/images as docker containers
 docker compose up -d
+
 
 docker run
 
