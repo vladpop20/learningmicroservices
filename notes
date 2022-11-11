@@ -1,3 +1,14 @@
 
 // need to be within the working directory, in order to compose the docker file
 docker compose up -d
+
+docker run
+
+docker start
+
+docker pull
+
+docker build
+
+// command to see all the images stored in server - docker host
+docker ps
