@@ -35,6 +35,8 @@ services:
     ports:
         # Port used for the Zipkin UI and HTTP Api
         - "9411:9411"
+    networks:
+      - spring
 
   rabbitmq:
     image: rabbitmq:3.9.11-management-alpine
@@ -43,8 +45,36 @@ services:
       - "5672:5672"
       - "15672:15672"
 
+  eureka-server:
+    image: vladpop20/eureka-server:latest
+    container_name: eureka-server
+    ports:
+#      port for server : port for container
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
+    depends_on:
+      - zipkin
+
+  apigw:
+    image: vladpop20/apigw:latest
+    container_name: apigw
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
+    depends_on:
+      - zipkin
+      - eureka-server
+
 networks:
   postgres:
+    driver: bridge
+  spring:
     driver: bridge
 
 volumes:
