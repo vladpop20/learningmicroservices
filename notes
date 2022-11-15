@@ -18,5 +18,5 @@ docker build
 // command to see all the images stored in server - docker host
 docker ps
 
-// Build new images with
+// Build new images with command and share on my DockerHub page
 mvn clean package -P build-docker-image
