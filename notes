@@ -20,3 +20,27 @@ docker ps
 
 // Build new images with command and share on my DockerHub page
 mvn clean package -P build-docker-image
+
+
+// to see all the active pods in Kubernetes
+kubectl get pods
+or
+kubectl get pods -w
+
+// to see all the pods/services/resources, use this
+kubectl get all
+
+// to apply some service to kubernetes/minikube
+kubectl apply -f bootstrap/postgres
+kubectl apply -f bootstrap/zipkin
+kubectl apply -f bootstrap/rabbitmq
+
+// to start a pod in kubernetes
+kubectl exec -it postgres-0 -- psql -U amigoscode
+
+// Use the following commands to access both RabbitMQ and Zipkin
+minikube service --url rabbitmq
+minikube service --url zipkin
+
+// use to start a 'tunnel' in mikikube. (rabbitmq is the name of the service)
+minikube service --url rabbitmq
