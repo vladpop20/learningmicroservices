@@ -31,17 +31,23 @@ kubectl get pods -w
 kubectl get all
 
 // to see more information about a pod use describe
-kubectl describe postgres-0
+kubectl describe <name of the pod>
+
+// to see the logs of a pod
+kubectl logs <name of the pod>
+
+// to see the kubernetes active services
+kubectl get services
 
 // to apply some service to kubernetes/minikube
 kubectl apply -f bootstrap/postgres
 kubectl apply -f bootstrap/zipkin
 kubectl apply -f bootstrap/rabbitmq
 
-// to start a pod in kubernetes
+// to start a pod in kubernetes and run commands in your POD
 kubectl exec -it postgres-0 -- psql -U amigoscode
 
-// Use the following commands to access both RabbitMQ and Zipkin
+// Use the following commands to access both services RabbitMQ and Zipkin, that are services in minikube/kubernetes
 minikube service --url rabbitmq
 minikube service --url zipkin
 
