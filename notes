@@ -11,8 +11,6 @@ docker start
 
 docker pull
 
-
-
 docker build
 
 // command to see all the images stored in server - docker host
@@ -21,6 +19,8 @@ docker ps
 // Build new images with command and share on my DockerHub page
 mvn clean package -P build-docker-image
 
+// to start minikube before using kubectl
+minikube start
 
 // to see all the active pods in Kubernetes
 kubectl get pods
@@ -29,6 +29,9 @@ kubectl get pods -w
 
 // to see all the pods/services/resources, use this
 kubectl get all
+
+// to see more information about a pod use describe
+kubectl describe postgres-0
 
 // to apply some service to kubernetes/minikube
 kubectl apply -f bootstrap/postgres
