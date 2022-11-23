@@ -5,6 +5,10 @@ docker compose up -d
 // Pull new images from Docker Hub because we use 'latest' for our images
 docker compose pull
 
+// To get rid of everything in docker
+docker compose down
+
+
 docker run
 
 docker start
