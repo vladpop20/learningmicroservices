@@ -51,9 +51,58 @@ kubectl apply -f bootstrap/rabbitmq
 // to start a pod in kubernetes and run commands in your POD
 kubectl exec -it postgres-0 -- psql -U amigoscode
 
+// how to scale a service/deployment pod to zero
+kubectl scale --replicas=0 deployment <name of the pod>
+
+// how to enter a pod, for example the postgres SQL
+kubectl exec -it postgres-0 -- psql -U amigoscode
+
 // Use the following commands to access both services RabbitMQ and Zipkin, that are services in minikube/kubernetes
 minikube service --url rabbitmq
 minikube service --url zipkin
 
 // use to start a 'tunnel' in mikikube. (rabbitmq is the name of the service)
 minikube service --url rabbitmq
+
+#########################################################################################
+#########################################################################################
+
+
+
+export KUBECONFIG=~/amigoscode-kubeconfig.yml
+
+1) $env:KUBECONFIG = "C:\Users\vladp\.kube\coodru-kubeconfig.yaml"
+
+2) ls env:KUBECONFIG
+
+
+kubectl apply -f path
+kubectl delete -f path
+
+kubectl get po
+kubectl get nodes
+// for getting the namespaces
+kubectl get ns
+kubectl get svc
+kubectl get po -w
+
+kubectl logs postgres-0
+
+kubectl exec -it postgres-0 -- psql -U amigoscode
+
+kubectl describe pod podName
+
+kubectl logs podName
+kubectl logs -f podName
+
+kubectl exec -it postgres-0 -- psql -U linpostgres -h lin-4621-419-pgsql-primary.servers.linodedb.net
+kubectl exec -it postgres-0 -- psql --help
+kubectl exec -it postgres-0 -- psql -U linpostgres -h lin-4621-419-pgsql-primary.servers.linodedb.net
+kubectl exec -it postgres-0 -- bash
+
+psql -U host -U username -d database
+\d
+\dt
+\c databaseName
+create database dbName;
+select * from tableName;
