@@ -1,3 +1,7 @@
+// Build new images with command and share on my DockerHub page
+mvn clean package -P build-docker-image
+
+--------------------------------------------------------------------------------------
 
 // need to be within the working directory, in order to compose the docker file, and start the services/images as docker containers
 docker compose up -d
@@ -20,8 +24,7 @@ docker build
 // command to see all the images stored in server - docker host
 docker ps
 
-// Build new images with command and share on my DockerHub page
-mvn clean package -P build-docker-image
+--------------------------------------------------------------------------------------
 
 // to start minikube before using kubectl
 minikube start
@@ -70,6 +73,8 @@ minikube service --url rabbitmq
 
 
 export KUBECONFIG=~/amigoscode-kubeconfig.yml
+export KUBECONFIG=coodru-kubeconfig.yaml
+
 
 1) $env:KUBECONFIG = "C:\Users\vladp\.kube\coodru-kubeconfig.yaml"
 
@@ -77,7 +82,10 @@ export KUBECONFIG=~/amigoscode-kubeconfig.yml
 
 
 kubectl apply -f path
+
 kubectl delete -f path
+
+
 
 kubectl get po
 kubectl get nodes
