@@ -60,6 +60,11 @@ kubectl scale --replicas=0 deployment <name of the pod>
 // how to enter a pod, for example the postgres SQL
 kubectl exec -it postgres-0 -- psql -U amigoscode
 
+// how to enter a pod on Linode cloud, for example the postgres SQL
+1)   kubectl exec -it postgres-0 -- bash
+2)   psql -h lin-12494-3575-pgsql-primary.servers.linodedb.net -U linpostgres -d postgres
+3)   enter the password from Linode
+
 // Use the following commands to access both services RabbitMQ and Zipkin, that are services in minikube/kubernetes
 minikube service --url rabbitmq
 minikube service --url zipkin
